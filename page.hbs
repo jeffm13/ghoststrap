@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+{{>"nav"}}
+<header id="page-header" class="blog-cover animated fadeIn" {{#if image}}data-stellar-background-ratio="0.5" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <div class="container" data-stellar-ratio="0.75">
+        <h1 class="blog-title">{{title}}</h1>
+        <section class="post-meta">
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+        </section>
+</header>
+
+<main class="content" role="main" class="main container">
+    <div class="row blog-article">
+        <article class="col-sm-10 col-sm-offset-1 {{post_class}}">
+    {{! Everything inside the #post tags pulls data from the post }}
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+        <section class="post-content">
+            {{content}}
+        </section>
+    </article>
+</main>
+{{/post}}
