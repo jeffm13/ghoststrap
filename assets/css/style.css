@@ -180,20 +180,26 @@ header a {
     margin-top: 5vh;
     margin-bottom: 4vh;
 }
+.author-meta,
 .post-meta {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
+.author-meta a,
 .post-meta a {
     color: #9f9f9f;
     text-decoration: none;
 }
+.author-meta a:hover,
 .post-meta a:hover {
     text-decoration: underline;
+}
+.post-meta-date {
+    font-size: 1.5rem;
+    color: #9f9f9f;
 }
 .read-more {
     float: right;
 }
-.blog-list-entry:after {
-    padding-bottom: 6vh;
-    border-bottom: thin solid #afada7;
+article {
+    margin-bottom: 8vh;
 }
