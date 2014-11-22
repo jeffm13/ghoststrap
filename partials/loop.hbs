@@ -10,17 +10,36 @@
         <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
-        <img src="{{image}}">
-        <section class="post-excerpt">
-            <p>{{excerpt words="26"}}</p>
-            <a class="btn btn-default read-more" role="button" href="{{url}}">More...</a>
-        </section>
+        <div class="row">
+            <div class="col-xs-4">
+                <img src="{{image}}">
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+                <section class="post-excerpt">
+                    <p>{{excerpt words="45"}} <a href="{{url}}">[...]</a></p>
+                    <a class="btn btn-default read-more" role="button" href="{{url}}">Read more</a>
+                </section>    
+            </div>
+        </div>
+
         <footer class="post-meta">
-            <i class="fa fa-edit"></i> <span class="post-meta-author-link">{{author}}</span>
+            <div class="row post-meta-row">
+                <div class="col-sm-12">
+                    <i class="fa fa-edit"></i> <span class="post-meta-author-link">{{author}}</span>
+                </div>
+            </div>
             {{#if tags}}
-                <span class="post-meta-tags"></span><i class="fa fa-tags"></i> {{tags}}</span>
+            <div class="row post-meta-row">
+                <div class="col-sm-12">
+                    <span class="post-meta-tags"></span><i class="fa fa-tags"></i> {{tags}}</span>
+                </div>
+            </div>    
             {{/if}}
-            <i class="fa fa-calendar"></i> <time class="post-meta-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            <div class="row post-meta-row">
+                <div class="col-sm-12">
+                    <i class="fa fa-calendar"></i> <time class="post-meta-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+                </div>
+            </div>
         </footer>
     </article>
     {{/foreach}}
