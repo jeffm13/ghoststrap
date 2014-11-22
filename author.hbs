@@ -21,9 +21,9 @@
             <figure class="author-image">
                 <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
             </figure>
-            <h2>Bio</h2>
             {{/if}}
             {{#if bio}}
+            <h2>Bio</h2>
             <p class="author-bio">{{bio}}</p>
             {{/if}}
             <div class="author-meta">
@@ -36,7 +36,9 @@
     {{/author}}
     {{! The tag below includes the post loop - partials/loop.hbs }}
     <div class="row">
-        <h2>{{pagination.total}} Posts</h2> 
+        <div class="author-post-heading col-xs-10 col-xs-offset-1">
+            <h2>{{pagination.total}} Posts</h2> 
+        </div>
         {{> "loop"}}
     </div>
 </main>
