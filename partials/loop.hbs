@@ -1,51 +1,24 @@
-{{! Previous/next page links - only displayed on page 2+ }}    
-<div class="col-xs-12"
-  {{pagination}}
-</div>
- 
-<div class="col-sm-10 col-sm-offset-1 blog-main blog-list">
+<div class="col-sm-8 col-sm-offset-2 blog-main blog-list">
     {{! This is the post loop - each post will be output using this markup }}
     {{#foreach posts}}
-    <article class="row blog-list-entry {{post_class}}">
+    <article class="row post-list-entry {{post_class}}">
         <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            <div class="post-meta">
+                <i class="fa fa-calendar"></i> <time class="post-meta-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+                <i class="fa fa-edit"></i> <span class="post-meta-author-link">{{author}}</span>          
+                <span class="post-meta-tags"></span><i class="fa fa-tags"></i> {{tags}}</span>
+            </div>
         </header>
-        <div class="row">
-            <div class="col-xs-4">
-                <img src="{{image}}">
-            </div>
-            <div class="col-xs-7 col-xs-offset-1">
-                <section class="post-excerpt">
-                    <p>{{excerpt words="45"}} <a href="{{url}}">[...]</a></p>
-                    <a class="btn btn-default read-more" role="button" href="{{url}}">Read more</a>
-                </section>    
-            </div>
+        <div class="post-list-excerpt">
+            <section class="post-excerpt-content">
+                <p>{{excerpt words="45"}} <a href="{{url}}">[...]</a></p>
+                <a class="btn btn-default read-more" role="button" href="{{url}}">Read more</a>
+            </section>    
         </div>
-
-        <footer class="post-meta">
-            <div class="row post-meta-row">
-                <div class="col-sm-12">
-                    <i class="fa fa-edit"></i> <span class="post-meta-author-link">{{author}}</span>
-                </div>
-            </div>
-            {{#if tags}}
-            <div class="row post-meta-row">
-                <div class="col-sm-12">
-                    <span class="post-meta-tags"></span><i class="fa fa-tags"></i> {{tags}}</span>
-                </div>
-            </div>    
-            {{/if}}
-            <div class="row post-meta-row">
-                <div class="col-sm-12">
-                    <i class="fa fa-calendar"></i> <time class="post-meta-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
-                </div>
-            </div>
-        </footer>
     </article>
-    {{/foreach}}
-    
+    {{/foreach}}   
 </div>
-
 <div class="col-xs-12">
   {{pagination}}
 </div>

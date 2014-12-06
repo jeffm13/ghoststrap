@@ -49,7 +49,7 @@ a:focus {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 10001;
     padding: 0 2vh;
 }
 .navbar-transparent:focus {
@@ -182,7 +182,7 @@ header a {
 }
 .author-meta,
 .post-meta {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .author-meta a,
 .post-meta a {
@@ -194,7 +194,7 @@ header a {
     text-decoration: underline;
 }
 .post-meta-date {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #9f9f9f;
 }
 .read-more {
@@ -202,4 +202,10 @@ header a {
 }
 article {
     margin-bottom: 8vh;
+}
+.post-list-image {
+    background-position: center;
+    background-size: cover;
+    border: 1;
+    height: 100%;
 }
